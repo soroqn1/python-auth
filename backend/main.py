@@ -1,6 +1,5 @@
 from fastapi import Depends, FastAPI
-
-from .security.auth import get_user
+from security.auth import get_user
 
 app = FastAPI()
 
