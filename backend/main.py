@@ -1,6 +1,9 @@
+from database.db_control import Base, engine
 from fastapi import Depends, FastAPI
 from fastapi.security import OAuth2PasswordRequestForm
 from security.auth import get_user
+
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
