@@ -17,3 +17,9 @@ def read_user_me(user_token: str = Depends(get_user)):
 def login_user(form_data: OAuth2PasswordRequestForm = Depends()):
     # TODO: implement db check
     return {"token": "test-token"}
+
+
+@app.post("/register")
+def register_user(form_data: OAuth2PasswordRequestForm = Depends()):
+    # TODO: implement db check
+    return {"message": "user registered"}
