@@ -1,3 +1,4 @@
+from pydantic import BaseModel
 from sqlalchemy import Boolean, Column, Integer, String
 
 from .base import Base
@@ -10,3 +11,9 @@ class User(Base):
     email = Column(String, unique=True, index=True)
     hashed_password = Column(String)
     is_superuser = Column(Boolean, default=False)
+
+
+class UserCreate(BaseModel):
+    username: str
+    email: str
+    password: str
